@@ -1,9 +1,10 @@
 pipeline {
-    agent { label 'java-11-node' }
+    agent { dockerfile true }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
                 sh 'node --version'
+                sh 'svn --version'
             }
         }
     }
